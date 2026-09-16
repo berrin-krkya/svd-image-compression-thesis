@@ -1,17 +1,36 @@
-title: Low-Rank Matrix Approximation for Image Compression using SVD
+title: Approximation matricielle de faible rang pour la compression d'images par SVD
 author: Berrïn Karakaya
-
-# logo: rapports/logoGSU.png
+copyright: "2026 Berrïn Karakaya"
 
 execute:
   execute_notebooks: off
 
-# Repository bilgisi 
+exclude_patterns:
+  - _build
+  - .venv
+  - README.md
+  - Journal-de-Bord.md
+
 repository:
   url: https://github.com/berrin-krkya/svd-image-compression-thesis
   path_to_book: .
   branch: main
 
+parse:
+  myst_enable_extensions:
+    - dollarmath
+    - amsmath
+    - deflist
+    - html_admonition
+    - html_image
+
+launch_buttons:
+  thebe: false
+
 html:
   use_issues_button: false
   use_repository_button: true
+  use_download_button: true
+  use_fullscreen_button: true
+  home_page_in_navbar: true
+  baseurl: https://berrin-krkya.github.io/svd-image-compression-thesis
