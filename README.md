@@ -61,3 +61,9 @@ According to the Eckart-Young theorem, this approximation is optimal with respec
 * **Language:** Python (NumPy, Matplotlib, OpenCV)
 * **Typesetting:** LaTeX
 * **Domain:** Linear Algebra, Dimensionality Reduction, Image Processing
+
+## 📄 Full Thesis Document
+
+<iframe src="/svd-image-compression-thesis/rapports/main_current.pdf" width="100%" height="800px" style="border: none;">
+  Your browser does not support PDFs. <a href="/svd-image-compression-thesis/rapports/main_current.pdf">Download the PDF</a>.
+</iframe>
