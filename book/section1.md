@@ -1,4 +1,6 @@
-# 1. Objectifs du Projet
+# 1. Objectifs et Introduction
+
+## Objectifs du Projet
 
 Dans ce projet, nous étudions comment les outils de la Théorème Spectral peuvent être utilisés pour analyser des matrices de grande dimension. L’objectif est de comprendre comment obtenir une approximation de rang faible d'une image numérique (représentée par une matrice), tout en minimisant la perte d'information par rapport à la représentation initiale.
 
@@ -6,7 +8,7 @@ Dans un premier temps, nous rappelons les notions de base de la Théorème Spect
 
 Enfin, nous appliquons ces outils à des images numériques afin de construire des approximations de ces images en utilisant une quantité réduite de données. Ce travail permet d’illustrer, d’un point de vue mathématique, comment la Décomposition en Valeurs Singulières conduit à une réduction de dimension.
 
-Introduction
+## Introduction
 
 Comprendre une application linéaire peut être difficile, car la matrice qui la représente peut contenir plusieurs effets géométriques dans des espaces de grande dimension. Le Théorème Spectral nous aide à comprendre ces transformations d’une manière simple. Il montre qu’une matrice symétrique peut être écrite avec des vecteurs propres et des valeurs propres. Les valeurs propres indiquent combien la transformation agrandit ou réduit dans une direction. Les vecteurs propres sont des vecteurs dont la direction ne change pas sous cette transformation. Ainsi, la transformation devient plus claire. Les matrices orthogonales sont utiles car elles gardent les distances et les angles. Elles représentent des rotations ou des symétries. Elles ne déforment pas l’espace et sont très stables dans les calculs, ce qui est important en informatique. La matrice diagonale obtenue avec les valeurs propres permet de simplifier les calculs. Les calculs de puissance ou l'inverse d'une telle matrice sont plus faciles.
 

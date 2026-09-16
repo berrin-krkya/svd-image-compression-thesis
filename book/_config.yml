@@ -7,13 +7,10 @@ execute:
 
 exclude_patterns:
   - _build
-  - .venv
-  - README.md
-  - Journal-de-Bord.md
 
 repository:
   url: https://github.com/berrin-krkya/svd-image-compression-thesis
-  path_to_book: .
+  path_to_book: book
   branch: main
 
 parse:
@@ -34,3 +31,22 @@ html:
   use_fullscreen_button: true
   home_page_in_navbar: true
   baseurl: https://berrin-krkya.github.io/svd-image-compression-thesis
+
+sphinx:
+  config:
+    # Publish the original LaTeX manuscript, images and PDF (rapports/) next
+    # to the built book so links such as ../rapports/main_current.pdf resolve
+    # on the deployed site.
+    html_extra_path:
+      - ../rapports
+    # main.tex defines \R \N \C \Z \Q as shorthands for \mathbf{R} etc.
+    # These macros let the equations render correctly without rewriting the
+    # original LaTeX source.
+    mathjax3_config:
+      tex:
+        macros:
+          R: "\\mathbf{R}"
+          N: "\\mathbf{N}"
+          C: "\\mathbf{C}"
+          Z: "\\mathbf{Z}"
+          Q: "\\mathbf{Q}"

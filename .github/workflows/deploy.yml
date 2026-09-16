@@ -35,7 +35,7 @@ jobs:
           python -m pip install -r requirements.txt
 
       - name: Build book
-        run: jupyter-book build .
+        run: jupyter-book build book
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -43,7 +43,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _build/html
+          path: book/_build/html
 
   deploy:
     needs: build

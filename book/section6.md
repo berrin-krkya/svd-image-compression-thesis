@@ -1,0 +1,9 @@
+# 6. Conclusion
+
+Dans le cadre de ce travail, nous avons d'abord étudié les fondements du théorème spectral afin de comprendre la structure des matrices symétriques, ce qui nous a permis de généraliser ces concepts aux matrices rectangulaires en utilisant la décomposition en valeurs singulières (DVS). Grâce à l'analyse du quotient de Rayleigh et au théorème d'Eckart-Young, nous avons montré le rôle des valeurs propres et des valeurs singulières dans les problèmes d'approximation matricielle. Cette approche permet de comprendre comment une matrice peut être représentée de manière optimale par une approximation de rang faible, tout en minimisant la perte d'information selon les normes spectrale et de Frobenius.
+
+Pour mettre cette théorie en pratique, nous l'avons appliquée à la compression d'images. Cet exemple met en évidence l'importance de la réduction de dimension, en montrant que les premières composantes singulières concentrent l'essentiel de l'information de l'image, tandis que les composantes restantes représentent des détails plus fins.
+
+Dans notre application, les images ont été traitées en niveaux de gris. Car une image en niveaux de gris se représente par une seule matrice $A \in \mathbb{R}^{m \times n}$.Dans le cas d'une image en couleur (RGB), les données forment un tableau à trois dimensions ($m \times n \times 3$), qui n'est plus une matrice mais un tenseur. Comme la DVS n'est définie que pour les matrices bidimensionnelles, on l'applique alors séparément à chacun des trois canaux (rouge, vert et bleu), puis on recombine les résultats pour reconstruire l'image.
+
+En résumé, cette méthode permet de simplifier et d'analyser des données complexes en conservant uniquement l'information la plus significative. Cela la rend particulièrement efficace dans de nombreux autres domaines tels que le traitement du signal, l'analyse de données, la vision par ordinateur et l'apprentissage automatique.

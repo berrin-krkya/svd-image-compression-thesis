@@ -1,0 +1,20 @@
+format: jb-book
+root: index
+
+chapters:
+  - file: section1
+    title: Objectifs et introduction
+  - file: section2
+    title: Théorème spectral
+  - file: section3
+    title: Décomposition en valeurs singulières
+  - file: section5
+    title: Approximation matricielle de rang faible
+  - file: section4
+    title: Application à la compression d'images
+  - file: section6
+    title: Conclusion
+  - file: section7
+    title: Annexes — Codes Python
+  - file: references
+    title: Références
