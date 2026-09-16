@@ -28,19 +28,24 @@ jobs:
 
       - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install jupyter-book
 
       - name: Build the book
         run: |
           jupyter-book build .
+          echo "=== Build output check ==="
+          ls -la
+          ls -la _build || echo "_build klasörü yok!"
+          ls -la _build/html || echo "_build/html klasörü yok!"
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _build/html/
+          path: _build/html
 
       - name: Deploy to GitHub Pages
         id: deployment
