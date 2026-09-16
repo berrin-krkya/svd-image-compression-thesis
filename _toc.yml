@@ -1,0 +1,7 @@
+format: jb-book
+root: index
+chapters:
+  - file: section1
+  - file: section2
+  - file: section3
+  - file: section4
