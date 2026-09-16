@@ -1,1 +1,16 @@
-# 1. Preliminary Results
+# 1. Objectifs du Projet
+
+Dans ce projet, nous étudions comment les outils de la Théorème Spectral peuvent être utilisés pour analyser des matrices de grande dimension. L’objectif est de comprendre comment obtenir une approximation de rang faible d'une image numérique (représentée par une matrice), tout en minimisant la perte d'information par rapport à la représentation initiale.
+
+Dans un premier temps, nous rappelons les notions de base de la Théorème Spectral. Nous montrons ensuite comment cette approche conduit à la décomposition en valeurs singulières dans le cas des matrices rectangulaires.
+
+Enfin, nous appliquons ces outils à des images numériques afin de construire des approximations de ces images en utilisant une quantité réduite de données. Ce travail permet d’illustrer, d’un point de vue mathématique, comment la Décomposition en Valeurs Singulières conduit à une réduction de dimension.
+
+Introduction
+
+Comprendre une application linéaire peut être difficile, car la matrice qui la représente peut contenir plusieurs effets géométriques dans des espaces de grande dimension. Le Théorème Spectral nous aide à comprendre ces transformations d’une manière simple. Il montre qu’une matrice symétrique peut être écrite avec des vecteurs propres et des valeurs propres. Les valeurs propres indiquent combien la transformation agrandit ou réduit dans une direction. Les vecteurs propres sont des vecteurs dont la direction ne change pas sous cette transformation. Ainsi, la transformation devient plus claire. Les matrices orthogonales sont utiles car elles gardent les distances et les angles. Elles représentent des rotations ou des symétries. Elles ne déforment pas l’espace et sont très stables dans les calculs, ce qui est important en informatique. La matrice diagonale obtenue avec les valeurs propres permet de simplifier les calculs. Les calculs de puissance ou l'inverse d'une telle matrice sont plus faciles.
+
+Cependant, dans de nombreuses applications, les objets étudiés ne sont pas représentés par des matrices carrées ou symétriques. Pour traiter ce type de matrices, on peut construire des matrices symétriques associées, comme $A^\top A$ , auxquelles le Théorème Spectral peut être appliqué. Cette approche conduit naturellement à la Décomposition en Valeurs Singulières, qui étend la notion de diagonalisation au cas des matrices rectangulaires. La décomposition en valeurs singulières permet d’écrire une matrice comme une somme de matrices de rang 1. La Décomposition en Valeurs Singulières permet de représenter la matrice associée à l’image originale à l’aide d’une quantité réduite d’informations, tout en restant proche de la matrice initiale. Cette démarche s’inscrit dans le cadre de l’approximation de matrices et conduit à une réduction de dimension, puisque l’image est décrite avec moins d’informations que dans sa représentation initiale.
+
+Dans cette thèse, nous étudierons la Théorème Spectral, la Décomposition en Valeurs Singulières et l'approximation matricielle. En appliquant ces outils aux images numériques, nous démontrerons comment on peut approximer à une image peut être représentée par une matrice par des matrices d'ordre inférieur. L'objectif de ce travail est de fournir une compréhension mathématique claire de la manière dont la réduction de dimensionnalité peut être obtenue à partir de la structure des matrices associées aux images.
+
