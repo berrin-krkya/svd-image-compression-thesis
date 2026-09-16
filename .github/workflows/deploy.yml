@@ -2,8 +2,7 @@ name: deploy-book
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 permissions:
   contents: read
@@ -18,26 +17,30 @@ jobs:
   deploy-book:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install Jupyter Book
         run: |
           python -m pip install --upgrade pip
-          pip install jupyter-book
+          pip install "jupyter-book>=1.0"
 
-      - name: Build the book
+      - name: Build the book (debug)
         run: |
-          jupyter-book build .
-          echo "=== Build output check ==="
+          echo "=== Repo içeriği ==="
           ls -la
-          ls -la _build || echo "_build klasörü yok!"
-          ls -la _build/html || echo "_build/html klasörü yok!"
+          echo "=== Config dosyaları ==="
+          ls -la _config.yml _toc.yml myst.yml 2>/dev/null || echo "Config dosyası bulunamadı"
+          echo "=== Build başlıyor ==="
+          jupyter-book build . --all
+          echo "=== Build sonrası ==="
+          ls -la
+          ls -la _build || echo "_build YOK"
+          ls -la _build/html || echo "_build/html YOK"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
