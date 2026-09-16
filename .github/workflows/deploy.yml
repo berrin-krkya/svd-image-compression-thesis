@@ -1,17 +1,48 @@
-title: Low-Rank Matrix Approximation for Image Compression using SVD
-author: Berrïn Karakaya
+name: deploy-book
 
-# logo: rapports/logoGSU.png
+on:
+  push:
+    branches: [main]
 
-execute:
-  execute_notebooks: off
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-# Repository bilgisi
-repository:
-  url: https://github.com/berrin-krkya/svd-image-compression-thesis
-  path_to_book: .
-  branch: main
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
-html:
-  use_issues_button: false
-  use_repository_button: true
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Jupyter Book (classic version)
+        run: |
+          python -m pip install --upgrade pip
+          pip install "jupyter-book==0.15.1"
+
+      - name: Build the book
+        run: |
+          jupyter-book build . --all
+          echo "=== Build kontrolü ==="
+          ls -la _build/html | head -20
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _build/html
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
