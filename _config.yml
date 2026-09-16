@@ -1,6 +1,6 @@
 title: Low-Rank Matrix Approximation for Image Compression using SVD
 author: Berrïn Karakaya
-logo: rapports/logoGSU.png
+# logo: rapports/logoGSU.png
 
 execute:
   execute_notebooks: off
