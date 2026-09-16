@@ -24,23 +24,17 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install Jupyter Book
+      - name: Install Jupyter Book (classic version)
         run: |
           python -m pip install --upgrade pip
-          pip install "jupyter-book>=1.0"
+          # Eski (Sphinx tabanlı) sürümü sabitle
+          pip install "jupyter-book==0.15.1"
 
-      - name: Build the book (debug)
+      - name: Build the book
         run: |
-          echo "=== Repo içeriği ==="
-          ls -la
-          echo "=== Config dosyaları ==="
-          ls -la _config.yml _toc.yml myst.yml 2>/dev/null || echo "Config dosyası bulunamadı"
-          echo "=== Build başlıyor ==="
           jupyter-book build . --all
-          echo "=== Build sonrası ==="
-          ls -la
-          ls -la _build || echo "_build YOK"
-          ls -la _build/html || echo "_build/html YOK"
+          echo "=== Build kontrolü ==="
+          ls -la _build/html | head -20
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
